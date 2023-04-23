@@ -9,22 +9,40 @@ import Body from "./components/Body Section/Body";
 import Sidebar from "./components/SideBar Section/Sidebar";
 import MyOrders from "./pages/MyOrders/MyOrders";
 
-const bodyRouter = createBrowserRouter(
+export const Layout = ({ children }) => {
+  return (
+    <div className="container">
+      <Sidebar />
+      {children}
+    </div>
+  );
+};
+
+const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Body />} />
-      <Route path="orders" element={<MyOrders />} />
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Body />
+          </Layout>
+        }
+      />
+      <Route
+        path="orders"
+        element={
+          <Layout>
+            <MyOrders />
+          </Layout>
+        }
+      />
     </>
   )
 );
 
 function App() {
-  return (
-    <div className="container">
-      <Sidebar />
-      <RouterProvider router={bodyRouter} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -25,18 +25,20 @@ const Sidebar = () => {
         <h3 className="divTitle">QUICK MENU</h3>
         <ul className="menuLists grid">
           <li className="listItem">
-            <a href="/" className="menuLink flex">
+            <Link to="/" className="menuLink flex">
+              {/* <a href="/" className="menuLink flex"> */}
               <IoMdSpeedometer className="icon" />
               <span className="smallText">Dashboard</span>
-            </a>
+              {/* </a> */}
+            </Link>
           </li>
           <li className="listItem">
-            <a href="/orders" className="menuLink flex">
-              {/* <Link to="orders" className="menuLink flex"> */}
+            {/* <a href="/orders" className="menuLink flex"> */}
+            <Link to="orders" className="menuLink flex">
               <MdDeliveryDining className="icon" />
               <span className="smallText">My Orders</span>
-              {/* </Link> */}
-            </a>
+            </Link>
+            {/* </a> */}
           </li>
           <li className="listItem">
             <a href="#" className="menuLink flex">
